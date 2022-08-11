@@ -1,0 +1,432 @@
+@use "sass:map";
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    width: 8.333333333333333% * $i;
+  }
+}
+
+@mixin h1Mobile {
+  font-family: inherit;
+  color: black;
+  font-size: 37px;
+  line-height: 48px;
+  margin-top: 61px;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+@mixin LogoMobile {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 58px;
+  padding-left: 5vh;
+  color: white;
+  text-transform: capitalize;
+}
+
+@mixin paragraphEssentials-M {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 29px;
+  color: #000000;
+}
+
+@mixin navItems {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+}
+
+@mixin Button {
+  padding: 13px 25px;
+  background-color: #fdc212;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 29px;
+  text-transform: capitalize;
+  border: none;
+  border-radius: 50px;
+}
+
+@mixin imgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin HeadImg {
+  width: 90%;
+}
+
+@mixin SubImg {
+  width: 65%;
+}
+
+@mixin regH2 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 29px;
+  line-height: 44px;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 12px;
+}
+
+@media (min-width: 0px) and (max-width: 767px) {
+  [class*="col-"] {
+    width: 100%;
+  }
+}
+
+.container90 {
+  width: 90%;
+  margin: 0 auto;
+}
+.mainNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #858585;
+  width: 100%;
+  padding: 21px 0;
+  .logo {
+    @include LogoMobile();
+  }
+  .NavUl {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding-right: 5vh;
+  }
+  .navLink {
+    @include navItems();
+  }
+}
+
+.header {
+  .HeadImg {
+    @include HeadImg();
+    margin-top: 50px;
+  }
+  .imgContainer {
+    @include imgContainer();
+  }
+  .headerH1 {
+    @include h1Mobile();
+  }
+  .header-p {
+    @include paragraphEssentials-M();
+    padding-bottom: 23px;
+  }
+  .MainButton {
+    @include Button();
+  }
+}
+
+.Findout {
+  margin-top: 135px;
+
+  .imgContainer {
+    @include imgContainer();
+  }
+  .SubImg {
+    @include SubImg();
+  }
+  .text-right {
+    color: blanchedalmond;
+  }
+  .regular-H2 {
+    @include regH2();
+    width: 80%;
+    margin: 0 auto;
+  }
+  p {
+    @include paragraphEssentials-M();
+    text-align: center;
+    margin-bottom: 12px;
+  }
+}
+.FindOut2 {
+  margin-top: 135px;
+
+  .imgContainer {
+    @include imgContainer();
+  }
+  .SubImg {
+    @include SubImg();
+  }
+  .text-right {
+    color: blanchedalmond;
+  }
+  .regular-H2 {
+    @include regH2();
+    width: 80%;
+    margin: 0 auto;
+  }
+  p {
+    @include paragraphEssentials-M();
+    text-align: center;
+    margin-bottom: 12px;
+  }
+}
+
+.regular-H2 {
+  @include regH2();
+}
+
+.Services {
+  margin-top: 150px;
+  h2 {
+    margin-bottom: 50px;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+    gap: 37px;
+  }
+}
+
+.services-box {
+  background: #ffffff;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 25px;
+  padding: 27px 0;
+}
+
+.imgBoxContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.ServicesBoxImg {
+  width: 135px;
+  height: 94px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.regH3 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 29px;
+  text-align: center;
+}
+
+.box-p {
+  @include paragraphEssentials-M();
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.boxLink {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+.delivery {
+  margin-top: 150px;
+  h2 {
+    margin-bottom: 30px;
+  }
+  .reg-p {
+    text-align: center;
+  }
+}
+
+.reg-p {
+  @include paragraphEssentials-M();
+}
+
+.DeliverButtonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin-top: 22px;
+}
+
+.DeliverButton {
+  @include Button();
+  i {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+}
+
+.deliveryImgContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.deliveryContainer {
+  width: 70%;
+  margin-top: 37px;
+}
+
+.contactUs {
+  margin-top: 150px;
+  .reg-p {
+    text-align: center;
+  }
+  .col-7 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 34px;
+    .contactUlContainer {
+      flex-grow: 1;
+    }
+    .col-2 {
+      width: 40%;
+    }
+  }
+}
+
+.contactLi {
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 14px;
+  line-height: 24px;
+  b {
+    font-weight: bold;
+  }
+}
+
+.ContactUsButton {
+  @include Button();
+}
+
+.footer {
+  margin-top: 150px;
+  background-color: #fee59a;
+  padding: 90px 0 46px 0;
+}
+
+.footerH2 {
+  @include regH2();
+  font-size: 24px;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.footerUl {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+}
+
+.footer-p {
+  width: 100%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+
+  color: #555454;
+  margin-top: 80px;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 6px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: #ffffff;
+}
+
+.hamburger {
+  display: none;
+  padding-right: 5vh;
+  .row {
+    display: flex;
+    gap: 4px;
+    .left {
+      .bar {
+        width: 5px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 0px) {
+  .NavUl {
+    position: fixed;
+    right: -100%;
+    top: 0rem;
+    flex-direction: column;
+    width: 50%;
+    height: 100vh;
+    text-align: right;
+    transition: 0.3s;
+    box-shadow: 0 10px rgb(0, 0, 0, 0.2);
+    background-color: #fdc212;
+  }
+  .NavUl.active {
+    right: 0;
+  }
+  .NavLI:first-child {
+    margin-top: 20vh;
+  }
+  .NavLink {
+    color: black;
+  }
+  .NavLI {
+    width: 100%;
+    border-bottom: 1px solid black;
+    font-size: 20px;
+  }
+  .NavLI:last-child {
+    border: none;
+  }
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .left {
+    display: none;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(13px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-13px) rotate(-45deg);
+  }
+  .NavButton {
+    background-color: white !important;
+  }
+}
+
+.NavButton {
+  @include Button();
+}
